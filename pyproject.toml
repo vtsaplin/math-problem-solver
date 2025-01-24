@@ -1,0 +1,10 @@
+[project]
+name = "math-problem-solver"
+version = "0.1.0"
+description = "CrewAI showcase for solving math problems with code interpretation and feedback loop"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "crewai>=0.98.0",
+    "crewai-tools>=0.32.1",
+]
