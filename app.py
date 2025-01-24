@@ -1,9 +1,16 @@
+import os
 from dotenv import load_dotenv
 from crewai import Agent, Crew, Task
 from crewai.flow.flow import Flow, listen, router, start, or_
+from langtrace_python_sdk import langtrace
 from pydantic import BaseModel
 
 load_dotenv()
+
+langtrace.init(
+    api_key=os.getenv("LANGTRACE_API_KEY"),
+    api_host=os.getenv("LANGTRACE_API_HOST"),
+)
 
 math_solver = Agent(
     role="Math Problem Solver",
