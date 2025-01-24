@@ -41,3 +41,7 @@ build/
 # Local development settings
 local_settings.py
 db.sqlite3
+
+# Logs
+logs/
+*.log

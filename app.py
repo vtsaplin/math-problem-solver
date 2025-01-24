@@ -1,4 +1,15 @@
+import os
 from dotenv import load_dotenv
+
+import agentops
+
+agentops.init(
+    api_key=os.getenv("AGENTOPS_API_KEY"),
+    auto_start_session=False,
+    skip_auto_end_session=True,
+    instrument_llm_calls=True,
+)
+
 from crewai import Agent, Crew, Task
 from crewai.flow.flow import Flow, listen, router, start, or_
 from pydantic import BaseModel
@@ -122,6 +133,8 @@ def solve_math_challenge(challenge, max_attempts=3):
 
 
 if __name__ == "__main__":
+    agentops.start_session()
     challenge = "Calculate the first 10 Fibonacci numbers"
     result = solve_math_challenge(challenge)
+    agentops.end_session(end_state="Success")
     print(result)
