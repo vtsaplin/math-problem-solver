@@ -7,4 +7,6 @@ requires-python = ">=3.12"
 dependencies = [
     "crewai>=0.98.0",
     "crewai-tools>=0.32.1",
+    "langfuse>=2.57.12",
+    "litellm>=1.57.4",
 ]

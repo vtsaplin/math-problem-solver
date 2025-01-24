@@ -1,9 +1,13 @@
 from dotenv import load_dotenv
+import litellm
 from crewai import Agent, Crew, Task
 from crewai.flow.flow import Flow, listen, router, start, or_
 from pydantic import BaseModel
 
 load_dotenv()
+
+litellm.success_callback = ["langfuse"]
+litellm.failure_callback = ["langfuse"]
 
 math_solver = Agent(
     role="Math Problem Solver",

@@ -1628,6 +1628,25 @@ wheels = [
 ]
 
 [[package]]
+name = "langfuse"
+version = "2.57.12"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "anyio" },
+    { name = "backoff" },
+    { name = "httpx" },
+    { name = "idna" },
+    { name = "packaging" },
+    { name = "pydantic" },
+    { name = "requests" },
+    { name = "wrapt" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/5d/e4/f39a6d3d125425037d9137e31ea38b11732432268039846d3e7862983893/langfuse-2.57.12.tar.gz", hash = "sha256:e74e7c7ef790475d222a9ee6e5163524495a899817db18736df2ab14bc72615f", size = 143446 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/92/1b/23d0d9b22821de585f48b2669f4f50ec3db183faae9604cdc71cad79f430/langfuse-2.57.12-py3-none-any.whl", hash = "sha256:11f7b0a002ef08c1de129384c866a389aa7997d6620c5a7282678ea769b93857", size = 255542 },
+]
+
+[[package]]
 name = "langsmith"
 version = "0.1.147"
 source = { registry = "https://pypi.org/simple" }
@@ -1759,12 +1778,16 @@ source = { virtual = "." }
 dependencies = [
     { name = "crewai" },
     { name = "crewai-tools" },
+    { name = "langfuse" },
+    { name = "litellm" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "crewai", specifier = ">=0.98.0" },
     { name = "crewai-tools", specifier = ">=0.32.1" },
+    { name = "langfuse", specifier = ">=2.57.12" },
+    { name = "litellm", specifier = ">=1.57.4" },
 ]
 
 [[package]]
