@@ -1,4 +1,9 @@
 from dotenv import load_dotenv
+
+import openlit
+
+openlit.init(otlp_endpoint="http://127.0.0.1:4318")
+
 from crewai import Agent, Crew, Task
 from crewai.flow.flow import Flow, listen, router, start, or_
 from pydantic import BaseModel
