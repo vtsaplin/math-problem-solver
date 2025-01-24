@@ -5,6 +5,9 @@ description = "CrewAI showcase for solving math problems with code interpretatio
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "arize-phoenix-otel>=0.7.1",
     "crewai>=0.98.0",
     "crewai-tools>=0.32.1",
+    "openinference-instrumentation-crewai>=0.1.4",
+    "openinference-instrumentation-litellm>=0.1.6",
 ]

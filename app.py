@@ -1,4 +1,19 @@
 from dotenv import load_dotenv
+
+from openinference.instrumentation.crewai import CrewAIInstrumentor
+from openinference.instrumentation.litellm import LiteLLMInstrumentor
+from phoenix.otel import register
+
+tracer_provider = register(
+    project_name="Math Problem Solver",
+    endpoint="http://0.0.0.0:6006/v1/traces",
+    verbose=True,
+    set_global_tracer_provider=True,
+)
+
+CrewAIInstrumentor().instrument(tracer_provider=tracer_provider)
+LiteLLMInstrumentor().instrument(tracer_provider=tracer_provider)
+
 from crewai import Agent, Crew, Task
 from crewai.flow.flow import Flow, listen, router, start, or_
 from pydantic import BaseModel
